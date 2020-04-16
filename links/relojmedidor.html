@@ -313,16 +313,12 @@
       var posiciones = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
       indice_peligrosidad = 0;
       var i = 0;
-
-      var email = "andreeiitaa100@gmail.com";
-
-      var email = getElementById('email');
-
+      email = document.getElementById("email").innerHTML;
 
       function jugar(){
 
-        if(email == null){
-            alert("por favo0r rellene el email");
+        if(email == ""){
+            alert("por favor rellene el email");
             return;
         }else{
 
@@ -344,6 +340,7 @@
 
           }
         }
+      }
 
         function comprobar(){
           var respuesta = $("input[type=radio]:checked").val();
@@ -379,23 +376,14 @@
             i++;
             jugar();
 
-          }else{
-            Email.send({
-                Host : "smtp.yourisp.com",
-                Username : "RSAC",
-                Password : "juancarlos123",
-                To : email,
-                From : "you@isp.com",
-                Subject : "Resultados test compliance",
-                Body : "usted tiene un problema gordo"
-            }).then(
-              message => alert(message)
-            );
           }
+
 
         }
 
-      }
+
+
+
 
     </script>
 
